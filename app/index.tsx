@@ -3,6 +3,8 @@ import React from 'react';
 import {  View, ScrollView, SafeAreaView, Text, Button, Pressable, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import { useRouter } from 'expo-router';
+import { LinearGradient } from "expo-linear-gradient";
+import { Image } from "react-native";
 
 export default function HomeScreen() {
 
@@ -17,12 +19,20 @@ export default function HomeScreen() {
   };
 
   return (
-    <SafeAreaView className="bg-primary">
+    <LinearGradient
+      colors={["#ffffff", "#192f6a", ]}
+      className="flex-1" // NativeWind class
+    >
+    <SafeAreaView className="bg-gradient-to-r from-white to-red-600">
           <ScrollView>
             <View className="w-full h-screen p-4 pt-10">
+              <Image
+                source={require("../assets/images/klogo.jpg")} 
+                style={{ width: 60, height: 60, margin: 'auto', borderRadius: 50 }} 
+              />
               <Text className="text-red-500 text-center mx-auto pt-10 pb-7 text-3xl font-pblack">KERALA ROAD SAFETY AUTHORITY</Text>
-              <Text className="text-red-400 text-center mx-auto pb-14 font-pregular">Established under KRSA Act 2007 - Government of Kerala</Text>
-              <Text className="text-yellow-400 text-center mx-auto pb-6 text-3xl font-pblack">About</Text>
+              <Text className="text-red-400 text-center mx-auto pb-12 font-pregular">Established under KRSA Act 2007 - Government of Kerala</Text>
+              <Text className="text-red-600 text-center mx-auto pb-6 text-3xl font-pbold">About</Text>
               <Text className="text-white text-center pb-24 font-pregular">
               The Kerala Road Safety Authority is a statutory body established under KRSA Act of 2007 by the Government of Kerala. The Kerala Road Safety Authority with dedicated Road Safety Fund focus to
                improve Road Safety in the State by providing support to stake-holding departments and District Road Safety Councils (DRSC). The Authority aims to reduce the risk of deaths and serious injuries from road crashes through multi-sectoral road safety interventions that specifically target high-risk locations and vulnerable road users. The Authority acts as
@@ -30,7 +40,7 @@ export default function HomeScreen() {
               </Text>
             </View>
             <View className="p-4 pt-10 w-full h-screen">
-              <Text className="text-2xl text-white font-pbold mb-6">
+              <Text className="text-2xl text-red-600 font-pbold mb-6">
                 OPTIONS
               </Text>
               {/* Use a flex container with wrapping */}
@@ -63,6 +73,6 @@ export default function HomeScreen() {
             </View>
           </ScrollView>
         </SafeAreaView>
-
+        </LinearGradient>
   );
 }

@@ -3,7 +3,7 @@ import { View, ScrollView, SafeAreaView, Text, TouchableOpacity } from 'react-na
 
 const Home = () => {
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="bg-gradient-to-b from-white to-blue-500 h-full">
       <ScrollView>
         <View className="w-full h-screen p-4">
           <Text className="text-red-500 text-center mx-auto pt-10 pb-7 text-3xl font-pblack">KERALA ROAD SAFETY AUTHORITY</Text>
